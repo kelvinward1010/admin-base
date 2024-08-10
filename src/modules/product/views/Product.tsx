@@ -1,12 +1,12 @@
 import { Typography } from "antd";
-import styles from "./DashBoard.module.scss";
+import styles from "./Product.module.scss";
 
 const { Title } = Typography;
 
-export function DashBoard1() {
+export function Product() {
     return (
         <div className={styles.container}>
-            <Title level={3}>This is Dash Board 1</Title>
+            <Title level={3}>This is Product</Title>
         </div>
     );
 }

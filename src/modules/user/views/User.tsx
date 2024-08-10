@@ -1,12 +1,12 @@
 import { Typography } from "antd";
-import styles from "./Home.module.scss";
+import styles from "./User.module.scss";
 
 const { Title } = Typography;
 
-export function Home() {
+export function User() {
     return (
         <div className={styles.container}>
-            <Title level={3}>This is Home</Title>
+            <Title level={3}>This is User</Title>
         </div>
     );
 }

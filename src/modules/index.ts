@@ -5,17 +5,27 @@ export const Layout = lazyLoad(
     (module) => module.Layout,
 );
 
-export const Home = lazyLoad(
-    () => import("./home/views/Home"),
-    (module) => module.Home,
+export const DashBoard = lazyLoad(
+    () => import("./dashboard/views/DashBoard"),
+    (module) => module.DashBoard,
 );
 
-export const DashBoard1 = lazyLoad(
-    () => import("./dashboard/views/DashBoard1"),
-    (module) => module.DashBoard1,
+export const User = lazyLoad(
+    () => import("./user/views/User"),
+    (module) => module.User,
 );
 
-export const DashBoard2 = lazyLoad(
-    () => import("./dashboard/views/DashBoard2"),
-    (module) => module.DashBoard2,
+export const AddEditUser = lazyLoad(
+    () => import("./user/views/AddEditUser"),
+    (module) => module.AddEditUser,
+);
+
+export const Product = lazyLoad(
+    () => import("./product/views/Product"),
+    (module) => module.Product,
+);
+
+export const AddEditProduct = lazyLoad(
+    () => import("./product/views/AddEditProduct"),
+    (module) => module.AddEditProduct,
 );

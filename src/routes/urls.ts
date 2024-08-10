@@ -1,8 +1,12 @@
 export const signinUrl = "/sign-in";
 
 export const layoutUrl = "/";
-export const homeUrl = "/home";
-
 export const dashboardUrl = "/dashboard";
-export const contentdashboard1Url = `${dashboardUrl}/content-dash-board-1`;
-export const contentdashboard2Url = `${dashboardUrl}/content-dash-board-2`;
+
+export const userUrl = "/user";
+export const addUserUrl = "/add-user";
+export const editUserUrl = "/user/:id";
+
+export const productUrl = "/product";
+export const addProductUrl = "/add-product";
+export const editProductUrl = "/product/:id";
