@@ -1,17 +1,21 @@
 import { Col, Flex, Form, Input, Row, Typography } from "antd";
 import styles from "./User.module.scss";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useRef, useState } from "react";
 import { ButtonConfig } from "@/components/buttonconfig";
 import { IUserTable } from "../types";
 import TableUser from "../components/TableUser";
+import { addUserUrl } from "@/routes/urls";
 
 const { Text } = Typography;
 
 export function User() {
+    const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
     const [usersSelected, setUsersSelected] = useState<IUserTable[]>([]);
     const timeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const goAddNewUser = () => navigate(addUserUrl);
 
     const handleChangeSearch = (value: string) => {
         if (timeRef.current) {
@@ -43,7 +47,7 @@ export function User() {
             </Row>
             <div className={styles.table_wrapper}>
                 <Flex gap={10} justify={"end"} align={"middle"}>
-                    <ButtonConfig lable={"Add"} />
+                    <ButtonConfig lable={"Add"} onClick={goAddNewUser} />
                     <ButtonConfig
                         lable={"Delete"}
                         className={`${usersSelected ? styles.deleted : styles.notdelected}`}

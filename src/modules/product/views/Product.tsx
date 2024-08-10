@@ -1,17 +1,21 @@
 import { Col, Flex, Form, Input, Row, Typography } from "antd";
 import styles from "./Product.module.scss";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useRef, useState } from "react";
 import { ButtonConfig } from "@/components/buttonconfig";
 import TableProduct from "../components/TableProduct";
 import { IProductTable } from "../types";
+import { addProductUrl } from "@/routes/urls";
 
 const { Text } = Typography;
 
 export function Product() {
+    const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
     const [usersSelected, setUsersSelected] = useState<IProductTable[]>([]);
     const timeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const goAddNewProduct = () => navigate(addProductUrl);
 
     const handleChangeSearch = (value: string) => {
         if (timeRef.current) {
@@ -43,7 +47,7 @@ export function Product() {
             </Row>
             <div className={styles.table_wrapper}>
                 <Flex gap={10} justify={"end"} align={"middle"}>
-                    <ButtonConfig lable={"Add"} />
+                    <ButtonConfig lable={"Add"} onClick={goAddNewProduct} />
                     <ButtonConfig
                         lable={"Delete"}
                         className={`${usersSelected ? styles.deleted : styles.notdelected}`}
