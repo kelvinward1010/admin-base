@@ -7,6 +7,10 @@ export const CHARTSTYPES = [
         value: "Bar",
         lable: "Bar",
     },
+    {
+        value: "Pie",
+        lable: "Pie",
+    },
 ];
 
 export const TOTALSTYPES = [

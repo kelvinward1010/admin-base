@@ -1,14 +1,14 @@
 import { Bar } from "@ant-design/plots";
 import styles from "./BarChart.module.scss";
 
-interface ColumnChartProps {
+interface BarChartProps {
     data: any;
 }
 
-function BarChart({ data }: ColumnChartProps) {
+function BarChart({ data }: BarChartProps) {
     const config = {
         data: data ?? [],
-        xField: "month",
+        xField: "type",
         yField: "value",
         label: {
             textBaseline: "bottom",

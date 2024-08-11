@@ -5,6 +5,7 @@ import { dataChart } from "../data";
 import { CHARTSTYPES, TOTALSTYPES } from "../config";
 import { useMemo, useState } from "react";
 import BarChart from "../components/charts/BarChart";
+import PieChart from "../components/charts/PieChart";
 
 const { Text, Title } = Typography;
 
@@ -27,6 +28,8 @@ export function DashBoard() {
             return <ColumnChart data={data} />;
         } else if (charttype === "Bar") {
             return <BarChart data={data} />;
+        } else if (charttype === "Pie") {
+            return <PieChart data={data} />;
         }
         return null;
     }, [charttype]);
@@ -107,7 +110,11 @@ export function DashBoard() {
                     </Card>
                 </Flex>
             </Card>
-            <Card title={LableTop2} bordered={false}>
+            <Card
+                className={styles.chartBox}
+                title={LableTop2}
+                bordered={false}
+            >
                 {renderedComponent}
             </Card>
         </div>

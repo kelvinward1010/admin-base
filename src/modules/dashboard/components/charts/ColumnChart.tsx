@@ -8,7 +8,7 @@ interface ColumnChartProps {
 function ColumnChart({ data }: ColumnChartProps) {
     const config = {
         data: data ?? [],
-        xField: "month",
+        xField: "type",
         yField: "value",
         label: {
             textBaseline: "bottom",
