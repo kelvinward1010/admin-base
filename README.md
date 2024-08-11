@@ -4,7 +4,4 @@
 - npx husky install
 - npm i -D eslint-config-prettier prettier eslint-plugin-react lint-staged
   
-## Prolayout Antd
-config from @antd/pro-layout
-
-### Preview on: https://prolayout-antd.vercel.app/
+## Layout Base Admin
